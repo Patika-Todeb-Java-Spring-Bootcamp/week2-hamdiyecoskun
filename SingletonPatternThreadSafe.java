@@ -9,7 +9,9 @@
         public static SingletonPatternThreadSafe getInstance() {
             if (instance == null) {
                 synchronized (SingletonPatternThreadSafe.class) {
+                    if (instance == null) {
                         instance = new SingletonPatternThreadSafe();
+                    }
                 }
             }
             return instance;
